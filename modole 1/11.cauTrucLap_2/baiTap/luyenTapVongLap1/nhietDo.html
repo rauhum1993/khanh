@@ -7,16 +7,21 @@
 <body>
 <script>
 
-    for (;; ) {
+    while (true) {
         let nhietDo = parseFloat(prompt('nhap nhiet do vao'));
         if (nhietDo > 100) {
-            alert('giam nhiet do xuong de');
-        } else if (nhietDo < 20) {
-            alert('tang nhiet do len ban oi');
-        } else if (20 <= nhietDo <= 100) {
-            alert('de yen ban oi')
+            alert('giam di');
+        } else
+            if (nhietDo < 20) {
+            alert('tang len');
+        } else
+            if (20 <= nhietDo <= 100) {
+            alert('ngon roi ban oi');
+            break;
         }
+
     }
+
 </script>
 </body>
 </html>
