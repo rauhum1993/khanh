@@ -6,8 +6,18 @@
 </head>
 <body>
 <script>
-    let chuoi=parseInt(prompt('nhap so vao day: '));
-    for(let i=0;i<chuoi.le)
+    let chuoi = prompt("nhập đại:")
+    let nguyenAm = ['a', 'ă', 'â', 'e', 'ê', 'i', 'o', 'ô', 'ơ', 'u', 'ư', 'y'];
+    let mang = chuoi.split("", chuoi.length);
+    let dem = 0;
+    for (let i = 0; i < mang.length; i++) {
+        for (let j = 0; j < nguyenAm.length; j++) {
+            if (mang[i] === nguyenAm[j]) {
+                dem++
+            }
+        }
+    }
+    alert(dem)
 </script>
 </body>
 </html>
