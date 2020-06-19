@@ -6,9 +6,9 @@
 </head>
 <body>
 <script>
-    let name = 'Khánh';
+    let name = "khanh";
     let cmnd = '1975436778';
-    let birthday = '23/11/1993';
+    let birthday = "11/19/1993";
     let email = 'maiBenNhauBanNhe@gmail.com';
     let address = 'Đà Nẵng';
     let typeService = "Villa";
@@ -24,29 +24,31 @@
     switch (choose) {
         case 1 : {
             alert(" tên khách hàng : " + name
-                + '\n ngày sinh :' + birthday
-                + '\n số chứng minh : ' + cmnd
-                + '\n Email : ' + email
-                + "\n Địa chỉ: " + address
-                + "\n level : " + typeCustomer
-                + "\n Giảm giá : " + discount + "%"
-                + '\n phòng bao nhiêu người :' + quantityIncluded + 'người'
-                + '\n số ngày thuê : ' + rendDay + 'ngày'
-                + '\n loại phòng : ' + typeRoom);
+                + '\n  ngày sinh :' + birthday
+                + '\n  số chứng minh : ' + cmnd
+                + '\n  Email : ' + email
+                + "\n  Địa chỉ: " + address
+                + "\n  Loại dịch vụ : " + typeService
+                + "\n  level : " + typeCustomer
+                + "\n  Giảm giá : " + discount + "%"
+                + '\n  phòng bao nhiêu người :' + quantityIncluded + 'người'
+                + '\n  số ngày thuê : ' + rendDay + 'ngày'
+                + '\n  loại phòng : ' + typeRoom);
             break;
 
         }
         case 2: {
-            let chooseEdit = parseInt(prompt("1.tên khách hàng : " + name
-                + '\n 2.ngày sinh :' + birthday
-                + '\n 3.số chứng minh : ' + cmnd
-                + '\n 4.Email : ' + email
-                + "\n 5.Địa chỉ: " + address
-                + "\n 6.level : " + typeCustomer
-                + "\n 7.Giảm giá : " + discount + "%"
-                + '\n 8.phòng bao nhiêu người :' + quantityIncluded + 'người'
-                + '\n 9.số ngày thuê : ' + rendDay + 'ngày'
-                + '\n 10.loại phòng : ' + typeRoom));
+            let chooseEdit = parseInt(prompt("  1.tên khách hàng : " + name
+                + '\n  2.ngày sinh :' + birthday
+                + '\n  3.số chứng minh : ' + cmnd
+                + '\n  4.Email : ' + email
+                + "\n  5.Địa chỉ: " + address
+                + "\n  6.Loại dịch vụ: " + address
+                + "\n  7.level : " + typeCustomer
+                + "\n  8.Giảm giá : " + discount + "%"
+                + '\n  9.phòng bao nhiêu người :' + quantityIncluded + 'người'
+                + '\n  10.số ngày thuê : ' + rendDay + 'ngày'
+                + '\n  11.loại phòng : ' + typeRoom));
 
             switch (chooseEdit) {
                 case 1: {
@@ -74,14 +76,18 @@
                     break;
                 }
                 case 7: {
-                    discount = prompt('Enter discount :');
-                    break;
-                }
-                case 8: {
-                    rendDay = prompt('Enter rendDay:');
+                    typeCustomer = prompt('Enter typeCustomer :');
                     break;
                 }
                 case 9: {
+                    discount = prompt('Enter discount :');
+                    break;
+                }
+                case 10: {
+                    rendDay = prompt('Enter rendDay:');
+                    break;
+                }
+                case 11: {
                     typeRoom = prompt('Enter typeRoom :');
                     break;
                 }
@@ -117,27 +123,43 @@
 
             if (rendDay >= '7') {
                 giamGia += 30
-            } else if (rendDay >5) {
+            } else if (rendDay > 5) {
                 giamGia += 20
-            } else if (rendDay >2) {
+            } else if (rendDay > 2) {
                 giamGia += 10
             } else (' nhap lai ban oi');
 
 
-            if (typeCustomer==='Diamond'){
+            if (typeCustomer === 'Diamond') {
                 giamGia += 15
-            } else if (typeCustomer==='Platium'){
-                giamGia+= 10
-            } else if (typeCustomer==='Gold'){
-                giamGia+=5
-            } else if (typeCustomer==='Silver'){
-                giamGia+=2
-            } else if (typeCustomer==='Member'){
-                giamGia=0
+            } else if (typeCustomer === 'Platium') {
+                giamGia += 10
+            } else if (typeCustomer === 'Gold') {
+                giamGia += 5
+            } else if (typeCustomer === 'Silver') {
+                giamGia += 2
+            } else if (typeCustomer === 'Member') {
+                giamGia = 0
             } else (' nhap cho dung de noi hoai');
+            let money = 0;
+            if (typeService === "Villa") {
+                money = 500;
+            } else if (typeService === "house") {
+                money = 300;
+            } else if (typeService === "room") {
+                money = 100;
+            }
+            let currentYear = new Date().getFullYear();
+            alert(currentYear);
+            let birthday1 = new Date(birthday).getFullYear();
+            alert(birthday1);
+            let ageCustomer = currentYear - birthday1;
+            alert(ageCustomer);
 
-            let money=0;
 
+
+
+            alert("Tổng số tiền phải trả là: " + (rendDay * money - giamGia));
 
 
 
